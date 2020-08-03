@@ -1,5 +1,7 @@
 import React from 'react';
-import PageHeader from '../Components/PageHeader';
+
+// components
+import PageHeader from '../../Components/PageHeader';
 
 // styles
 import './styles.css';
