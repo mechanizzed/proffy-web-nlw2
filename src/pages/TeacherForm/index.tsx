@@ -1,4 +1,5 @@
 import React, { FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 // api
 import api from '../../services/api';
@@ -16,6 +17,8 @@ import WarningIcon from '../../assets/images/icons/warning.svg';
 import './styles.css';
 
 function TeacherForm() {
+  const history = useHistory();
+
   const [name, setName] = React.useState('');
   const [avatar, setAvatar] = React.useState('');
   const [whatsapp, setWhatsapp] = React.useState('');
@@ -63,11 +66,10 @@ function TeacherForm() {
         schedule: scheduleItems,
       });
       alert('Cadastro realzado com sucesso!');
+      history.push('/');
     } catch (error) {
       alert('Erro ao realizar cadastro');
     }
-
-    console.log({ name, avatar, whatsapp, bio, subject, cost, scheduleItems });
   }
 
   return (
